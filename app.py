@@ -1,14 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def main_page():
-    return f"""
-    <h1>Привет, я будущий калькулятор International Cargo<h1>
-    <h2>У меня такое страшненькое название сайта и я медленный, потому что никто не подкинул монету пока<h2>
-    """
+    return render_template('index.html', sitename='InterCargoCalculate')
+
 
 if __name__ == "__main__":
     app.run()
